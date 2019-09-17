@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+}
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    width: 100%;
+    background-color: indigo;
+    color: white;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+#navlist {
+ display: flex;
+
+}
+#navlist li:hover { background-color: gray;}
+li {
+    list-style: none;
+    margin-right: 2rem;
+}
