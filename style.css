@@ -1,21 +1,41 @@
-body {
+* {
     margin: 0px;
+}
+#welcome-section {
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
 }
 #navbar {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: fixed;
     width: 100%;
+    height: 60px;
     background-color: indigo;
     color: white;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
 }
-#navlist {
+.navlist {
  display: flex;
+ justify-content: space-around;
+ width: 300px;
 
 }
-#navlist li:hover { background-color: gray;}
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.navlist li:hover { background-color: gray;}
 li {
     list-style: none;
     margin-right: 2rem;
 }
+.projects-grid {
+display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  
+}
+/*comment
