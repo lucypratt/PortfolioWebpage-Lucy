@@ -1,10 +1,17 @@
+:root {
+    --blue: #6699CC;
+    --gray: #BDBDBD;
+    --light-gray: #EBEDF3;
+    
+  }
+
 * {
     margin: 0px;
 }
 #welcome-section {
     height: 100vh;
     width: 100%;
-    background-color: grey;
+    background-color: var(--gray);
 }
 #navbar {
     display: flex;
@@ -13,7 +20,7 @@
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: indigo;
+    background-color: var(--blue);
     color: white;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
 }
@@ -25,12 +32,13 @@
 }
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    
 }
-.navlist li:hover { background-color: gray;}
+.navlist a:hover { background-color: var(--gray);}
 li {
     list-style: none;
     margin-right: 2rem;
+    color: var(--light-gray);
 }
 .projects-grid {
 display: grid;
@@ -38,4 +46,7 @@ display: grid;
   grid-gap: 4rem;
   
 }
-/*comment
+#image {
+    width: 150px;
+    height: 150px;
+}
