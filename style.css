@@ -81,6 +81,11 @@ figure {
   max-width: 50px;
   max-height: 50px;
 }
+footer {
+  display: flex;
+  justify-content: center;
+}
+
 /* 1200px / 16px = 75em */
 @media (max-width: 75em) {
     html {
