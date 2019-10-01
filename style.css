@@ -33,16 +33,23 @@
 
 }
 a {
+  color: white;
     text-decoration: none;
     
 }
-ul.navlist a:hover {
+.navlist a:hover {
+  color:black;
   background: var(--gray);
 }
 li {
     list-style: none;
     margin-right: 2rem;
     color: var(--light-gray);
+}
+.welcome-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .projects-grid {
 display: grid;
@@ -67,20 +74,22 @@ h1 {
 figure {
   display: flex;
   flex-direction: column;
-  margin: (30px, 100px)
+  margin: (30px, 200px);
+  align-items: center;
+  
+}
+#profiles figcaption {
+  padding: 10px
 }
 #profiles {
   display: flex;
   align-items: center;
 }
-#git {
+#contact figure img {
   max-width: 50px;
   max-height: 50px;
 }
-#email {
-  max-width: 50px;
-  max-height: 50px;
-}
+
 footer {
   display: flex;
   justify-content: center;
