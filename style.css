@@ -7,6 +7,7 @@
 
 * {
     margin: 0px;
+    padding: 0px;
     font-family: 'Dosis', sans-serif;
      
 }
@@ -53,15 +54,14 @@ li {
     color: var(--light-gray);
     font-size: 1.5rem;
 }
-
+#projects {
+  background-color: var(--light-gray);
+}
 .projects-grid {
 display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 4rem;
   width: 100%;
-  padding: (20px, 20px);
-  margin: 0 auto;
-  margin-bottom: 3rem;
   
 }
 h1 {
@@ -80,6 +80,7 @@ h3 {
  flex-direction: column;
   align-items: center;
   background-color: var(--gray);
+  color: white;
 }
 #image {
     width: 150px;
@@ -101,6 +102,7 @@ figure {
 }
 #profiles figcaption {
   padding: 10px;
+  color: black;
 }
 #profiles {
   display: flex;
@@ -114,6 +116,7 @@ figure {
 footer {
   display: flex;
   justify-content: center;
+  background-color: var(--light-gray);
 }
 
 /* 1200px / 16px = 75em */
@@ -121,18 +124,4 @@ footer {
     html {
       font-size: 60%;
     }
-  }
-  
-  /* 980px / 16px = 61.25em */
-  @media (max-width: 61.25em) {
-    html {
-      font-size: 58%;
-    }
-  }
-  
-  /* 460px / 16px = 28.75em */
-  @media (max-width: 28.75em) {
-    html {
-      font-size: 55%;
-    }
-  }
+}
