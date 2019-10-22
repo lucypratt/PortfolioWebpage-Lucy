@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    text-transform: capitalize;
+    
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+}
+.firstArea {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, .5fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1280px;
+    background-color: #A69992;
+}
+
+h1 {
+    font-family: 'Fascinate Inline', cursive;
+    color: #A69992;
+
+}
+#header {
+    color: #423E3D;
+    font-size: 3rem;
+    background-color:#A69992;
+    display: flex;
+    justify-content: center;
+}
+h2, h3, p {
+    font-family: 'Raleway', sans-serif;
+    color: #D9B4A7;
+}
+
+/* Planets Styling */
+.planetsDiv {
+    border: 3px solid #736B6A;
+    border-radius: 1rem;
+  
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+    background-color: #F2F1E9;
+}
+.planetPic {
+    max-width: 150px;
+    max-height: 200px;
+    border-radius: 1rem;
+    margin: .5rem;
+
+}
+
+/* Species Styling */
+.secondArea {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, .5fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1280px;
+    background-color: #A69992;
+}
+.sDiv {
+    border: 3px solid #736B6A;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    background-color: #F2F1E9;
+}
+.picDiv {
+    display: flex;
+    align-items: center;
+}
+#sHomeworld {
+    max-width: 100px;
+    max-height: 150px;
+    border-radius: 1rem;
+    margin: .5rem;
+}
+#sPic {
+    max-width: 150px;
+    max-height: 200px;
+    border-radius: 1rem;
+    margin: .5rem;
+}
