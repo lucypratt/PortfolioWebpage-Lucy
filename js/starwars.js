@@ -32,6 +32,7 @@ planetsDiv.appendChild(planetPic);
 //Attributes
 planetsDiv.setAttribute('class', 'planetsDiv')
 planetPic.setAttribute('class', 'planetPic');
+planetName.setAttribute('class', 'animated fadeIn delay-2s');
 
 })
 
@@ -46,8 +47,9 @@ function getCharNumber(charURL) {
   } else {
       return charID;
   }
-
+  
 }
+
 //Species
 species.forEach(function(s) {
     //Variables
@@ -82,6 +84,7 @@ species.forEach(function(s) {
     sHomeworld.setAttribute('id', 'sHomeworld');
     sPic.setAttribute('id', 'sPic');
     picDiv.setAttribute('class', 'picDiv');
+   
     
     })
     mainArea.appendChild(firstArea);

@@ -28,7 +28,9 @@ h1 {
     background-color:#A69992;
     display: flex;
     justify-content: center;
+    
 }
+
 h2, h3, p {
     font-family: 'Raleway', sans-serif;
     color: #D9B4A7;
