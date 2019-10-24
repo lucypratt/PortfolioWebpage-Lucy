@@ -110,25 +110,30 @@ species.forEach(function(s) {
     const mainHeader = document.querySelector('header');
     let mButton = document.createElement('button');
     mButton.textContent = "Male Characters";
-    
+    if (matchedDiv.getAttribute('style') === "display: none;")
+    {
+        matchedDiv.setAttribute("style", "display: revert;");
+    }
     mButton.addEventListener('click', () => {
       fCharacters.forEach(character => {
-        let matchedDiv = allDivs.find((oneDiv) => {
+        let matchedDiv = allDivs.find(oneDiv => {
           return oneDiv.firstChild.textContent === character.name;
         })
-        matchedDiv.setAttribute("style", "display: none;");
+      //  matchedDiv.setAttribute("style", "display: none;");
       })
     })
     let fButton = document.createElement('button');
 fButton.textContent = 'Female Characters';
 fButton.addEventListener('click', () => {
   mCharacters.forEach(character => {
-    let matchedDiv = allDivs.find((oneDiv) => {
+    let matchedDiv = allDivs.find(oneDiv => {
       return oneDiv.firstChild.textContent === character.name;
     })
-    matchedDiv.setAttribute("style", "display: none;");
+    matchedDiv.setAttribute("style", "display: revert;");
   })
 })
+mainHeader.appendChild(mButton);
+mainHeader.appendChild(fButton);
 
 
 mainHeader.appendChild(mButton);
