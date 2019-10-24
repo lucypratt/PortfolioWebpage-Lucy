@@ -21,7 +21,10 @@ let charNum = getCharNumber(planet.url);
 planetName.textContent = planet.name;
 planetTerrain.textContent = 'Terrain: ' + planet.terrain;
 planetPic.src = `https://starwars-visualguide.com/assets/img/planets/${charNum}.jpg`;
-
+planetPic.addEventListener('error', (event) => {
+    let badImage = event.target;
+    badImage.src="../Images/earth.png";
+});
 
 //Appending
 firstArea.appendChild(planetsDiv);
@@ -84,6 +87,10 @@ species.forEach(function(s) {
     sHomeworld.setAttribute('id', 'sHomeworld');
     sPic.setAttribute('id', 'sPic');
     picDiv.setAttribute('class', 'picDiv');
+    sHomeworld.addEventListener('error', (event) => {
+        let badImage = event.target;
+        badImage.src="../Images/earth.png";
+    });
    
     
     })
@@ -93,5 +100,41 @@ species.forEach(function(s) {
     secondArea.setAttribute('class', 'secondArea');
     firstArea.setAttribute('class', 'firstArea');
 
+/*Buttons Code - Has Issues and Needs to be Fixed
+    const mCharacters = people.filter(person => person.gender === 'male');
+    const fCharacters = people.filter(person => person.gender === 'female');
+    console.log(mCharacters);
+    console.log(fCharacters);
+    
+    const allDiv = Array.from(document.querySelector('div'));
+    const mainHeader = document.querySelector('header');
+    let mButton = document.createElement('button');
+    mButton.textContent = "Male Characters";
+    
+    mButton.addEventListener('click', () => {
+      fCharacters.forEach(character => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+          return oneDiv.firstChild.textContent === character.name;
+        })
+        matchedDiv.setAttribute("style", "display: none;");
+      })
+    })
+    let fButton = document.createElement('button');
+fButton.textContent = 'Female Characters';
+fButton.addEventListener('click', () => {
+  mCharacters.forEach(character => {
+    let matchedDiv = allDivs.find((oneDiv) => {
+      return oneDiv.firstChild.textContent === character.name;
+    })
+    matchedDiv.setAttribute("style", "display: none;");
+  })
+})
 
 
+mainHeader.appendChild(mButton);
+mainHeader.appendChild(fButton);
+
+const mCharacters = people.filter(person => person.gender === 'male');
+const fCharacters = people.filter(person => person.gender === 'female');
+const oCharacters = people.filter(person => person.gender !== 'female' && person.gender !== 'male');
+*/
