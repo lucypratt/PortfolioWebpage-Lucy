@@ -7,9 +7,10 @@
 // This is how to pull data from an API
 async function getPokemonData(url) {
     try {
+
         const response = await fetch(url)
         const data = await response.json()
-        console.log(data)
+        console.log(data) 
         populateDOM(data.results)
     }
     catch (error) {
@@ -17,9 +18,7 @@ async function getPokemonData(url) {
     }
 
 }
-getPokemonData('https://pokeapi.co/api/v2/pokemon/')
-
-
+const data = getPokemonData('https://pokeapi.co/api/v2/pokemon/')
 
 
 //Setting up the DOM
@@ -32,16 +31,19 @@ function populateDOM(pArr) {
 let pokeDiv = document.createElement('div')
 let pokeName = document.createElement('h1')
 let pokePic = document.createElement('img')
-let pokeNum = getPokeNumber(pokemon.url);
+let pokeNum = getPokeNumber(pokemon.url)
 
 //Assigning Value
 pokeName.textContent = pokemon.name
-pokePic.src = `..images/${pokeNum}.png`
+pokePic.src = `../Images/${pokeNum}.png`
 pokePic.addEventListener('error', (event) => {
             let badImage = event.target
             badImage.src = "../Images/earth.png"
         })
 
+ //Set Attributes
+pokeDiv.setAttribute('class', 'charDivs')
+pokePic.setAttribute('class', 'picDivs')
 //Appending
 
 pokeDiv.appendChild(pokeName)
