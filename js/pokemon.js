@@ -51,6 +51,10 @@ pokePic.addEventListener('error', (event) => {
         })
 
 pokeName.textContent = `${single_pokemon.name} height: ${single_pokemon.height}`
+//Click Function
+pokeCard.addEventListener( 'click', function() {
+    pokeCard.classList.toggle('is-flipped');
+  });
  //Set Attributes
 pokeFront.setAttribute('class', 'charDivs card__face card__face--front')
 pokeBack.setAttribute('class', 'card__face card__face--back')
@@ -70,10 +74,7 @@ pokeScene.appendChild(pokeCard)
 mainArea.appendChild(pokeScene)    
 }
 
-//Click Function
- pokeCard.addEventListener( 'click', function() {
-    pokeCard.classList.toggle('is-flipped');
-});
+
 
 
 //Array Character Function
