@@ -37,44 +37,25 @@ let pokeScene = document.createElement('div')
 let pokeCard = document.createElement('div')
 let pokeFront = document.createElement('div')
 let pokeBack = document.createElement('div')
-let pokeName = document.createElement('h1')
-let pokePic = document.createElement('img')
-let height = document.createElement('p')
-let pokeNum = getPokeNumber(single_pokemon.id)
+
+fillCardBack(pokeBack, single_pokemon)
+fillCardFront(pokeFront, single_pokemon)
 
 //Assigning Value
-pokeName.textContent = single_pokemon.name
-pokePic.src = `../Images/${pokeNum}.png`
-pokePic.addEventListener('error', (event) => {
-            let badImage = event.target
-            badImage.src = "../Images/earth.png"
-        })
-
-pokeName.textContent = `${single_pokemon.name} height: ${single_pokemon.height}`
 //Click Function
 pokeCard.addEventListener( 'click', function() {
     pokeCard.classList.toggle('is-flipped');
   });
  //Set Attributes
-pokeFront.setAttribute('class', 'charDivs card__face card__face--front')
-pokeBack.setAttribute('class', 'card__face card__face--back')
-pokePic.setAttribute('class', 'picDivs')
 pokeScene.setAttribute('class', 'scene')
 pokeCard.setAttribute('class', 'card')
 
 //Appending
-pokeFront.appendChild(pokePic)
-pokeFront.appendChild(pokeName)
-
 pokeCard.appendChild(pokeFront)
 pokeCard.appendChild(pokeBack)
-
 pokeScene.appendChild(pokeCard)
-
 mainArea.appendChild(pokeScene)    
 }
-
-
 
 
 //Array Character Function
@@ -95,5 +76,37 @@ function getPokeNumber(id) {
         return `0${charID}`
     }*/
 
+    
+}
+function fillCardBack(pokeBack, data) {
+let pokeOrder = document.createElement('p')
+let pokeHP = document.createElement('h5')
+
+pokeOrder.textContent = data.order
+pokeHP.textContent = data.stats[0].base_stat
+pokeBack.setAttribute('class', 'card__face card__face--back')
+
+pokeBack.appendChild(pokeOrder)
+pokeBack.appendChild(pokeHP)
 }
 
+
+function fillCardFront(pokeFront, data) {
+    let pokeName = document.createElement('h1')
+    let pokePic = document.createElement('img')
+    pokePic.setAttribute('class', 'picDivs')
+
+    let pokeNum = getPokeNumber(data.id)
+
+    pokeFront.setAttribute('class', 'charDivs card__face card__face--front')
+
+    pokePic.src = `../Images/${pokeNum}.png`
+    pokePic.addEventListener('error', (event) => {
+        let badImage = event.target
+        badImage.src = "../Images/earth.png"
+    })
+    pokeName.textContent = `${data.name} height: ${data.height}`
+
+    pokeFront.appendChild(pokePic)
+    pokeFront.appendChild(pokeName)
+    }

@@ -10,22 +10,23 @@ body {
 }
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, .5fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 2rem;
     width: 100%;
     max-width: 1280px;
     margin-bottom: 6rem;
 }
 
-/* h1, h3 {
+ h1, h3 {
     font-family: 'Fascinate Inline', cursive;
 font-size: 3px;
+margin: 0px;
 }
- */
+ 
 
 
 /* Card Styling */
-/* .charDivs {
+ .charDivs {
     border: 3px solid #736B6A;
     border-radius: 1rem;
     margin: 10px;
@@ -35,7 +36,7 @@ font-size: 3px;
    
 
     background-color: #F2F1E9;
-} */
+} 
 .picDivs {
     width: 100%;
 
@@ -65,12 +66,12 @@ font-size: 3px;
   position: absolute;
   width: 100%;
   height: 100%;
-  line-height: 260px;
-  color: white;
+  /* line-height: 260px; */
+  color: brown;
   text-align: center;
   font-weight: bold;
-  font-size: 40px;
-  backface-visibility: hidden;
+  font-size: .5rem;
+ backface-visibility: hidden;
 }
 
 .card__face--front {
@@ -78,7 +79,7 @@ font-size: 3px;
 }
 
 .card__face--back {
-  background: blue;
+  /* background: blue; */
   transform: rotateY(180deg);
 }
   
