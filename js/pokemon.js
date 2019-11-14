@@ -4,6 +4,21 @@
     const myJson = await response.json();
 };
 */
+//Like a cookie cutter to make more stuff
+class Pokemon {
+    constructor(id, name) {
+      this.id = id;
+      this.name = name;
+    }
+  }
+  
+  const lilguy = new Pokemon(900, 'lilguy');
+  const newButton = document.querySelector('#newPokemon')
+  newButton.addEventListener('click', function() {
+    populateDOM(lilguy)
+  })
+ 
+
 // This is how to pull data from an API - This just returns data from the url it's given
 async function getAPIData(url) {
     try {
@@ -24,8 +39,11 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/')
         .then(pokedata => {
             populateDOM(pokedata) //Comment this out if you keep making changes and hitting the API
         })
+        
       }
 })
+
+
 
 //Setting up the DOM
 let mainArea = document.querySelector('main')
@@ -44,7 +62,7 @@ fillCardFront(pokeFront, single_pokemon)
 //Assigning Value
 //Click Function
 pokeCard.addEventListener( 'click', function() {
-    pokeCard.classList.toggle('is-flipped');
+    pokeCard.classList.toggle('is-flipped'); //Adds "is flipped" to end of class name I believe.
   });
  //Set Attributes
 pokeScene.setAttribute('class', 'scene')
@@ -82,7 +100,7 @@ function fillCardBack(pokeBack, data) {
 let pokeOrder = document.createElement('p')
 let pokeHP = document.createElement('h5')
 
-pokeOrder.textContent = data.order
+pokeOrder.textContent = `#${data.order} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
 pokeHP.textContent = data.stats[0].base_stat
 pokeBack.setAttribute('class', 'card__face card__face--back')
 

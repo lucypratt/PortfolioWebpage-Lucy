@@ -19,7 +19,7 @@ main {
 
  h1, h3 {
     font-family: 'Fascinate Inline', cursive;
-font-size: 3px;
+font-size: 1rem;
 margin: 0px;
 }
  
@@ -70,7 +70,7 @@ margin: 0px;
   color: brown;
   text-align: center;
   font-weight: bold;
-  font-size: .5rem;
+  font-size: 1rem;
  backface-visibility: hidden;
 }
 
