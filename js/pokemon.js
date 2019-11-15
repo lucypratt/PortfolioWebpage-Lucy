@@ -101,7 +101,7 @@ let pokeOrder = document.createElement('p')
 let pokeHP = document.createElement('h5')
 
 pokeOrder.textContent = `#${data.order} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
-pokeHP.textContent = data.stats[0].base_stat
+//pokeHP.textContent = data.stats[0].base_stat
 pokeBack.setAttribute('class', 'card__face card__face--back')
 
 pokeBack.appendChild(pokeOrder)
