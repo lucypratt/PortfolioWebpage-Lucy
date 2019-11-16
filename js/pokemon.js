@@ -90,8 +90,11 @@ function getPokeNumber(id) {
 function fillCardBack(pokeBack, data) {
 let backName = document.createElement('h3')
 backName.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
-let powers = document.createElement('p')
-powers.textContent = data.abilities
+
+let power1 = document.createElement('p')
+power1.textContent = `Main Ability: ${data.abilities[0].ability.name}`
+let power2 = document.createElement('p')
+power2.textContent = `Secondary Ability: ${data.abilities[1].ability.name}`
 
 
 
@@ -99,7 +102,9 @@ powers.textContent = data.abilities
 pokeBack.setAttribute('class', 'card__face card__face--back')
 
 pokeBack.appendChild(backName)
-pokeBack.appendChild(powers)
+pokeBack.appendChild(power1)
+pokeBack.appendChild(power2)
+
 
 }
 

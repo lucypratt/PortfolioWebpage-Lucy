@@ -27,6 +27,11 @@ h3 {
   font-family: 'Josefin Slab', cursive;
   margin: 5px;
 }
+p {
+  font-family: 'Josefin Slab', cursive;
+  margin: 15px;
+text-transform: capitalize;
+}
  
 
 
