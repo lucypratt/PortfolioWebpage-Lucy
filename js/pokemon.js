@@ -13,7 +13,7 @@ class Pokemon {
   }
   
   const lilguy = new Pokemon(900, 'lilguy');
-  const newButton = document.querySelector('#newPokemon')
+  const newButton = document.querySelector('#new')
   newButton.addEventListener('click', function() {
     populateDOM(lilguy)
   })
@@ -43,7 +43,10 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/')
       }
 })
 
-
+//Map the data
+function makeMap(everyone) {
+    
+}
 
 //Setting up the DOM
 let mainArea = document.querySelector('main')
@@ -77,35 +80,27 @@ mainArea.appendChild(pokeScene)
 
 
 //Array Character Function
-
 function getPokeNumber(id) {
 
     if(id < 10) return `00${id}`
     if(id > 9 && id < 100) {
         return `0${id}`
     } else return id
-
-    /*let end = charURL.lastIndexOf('/')
-    let charID = charURL.substring(end - 2, end)
-    if (charID.indexOf('/') !== -1) {
-        return `00${charID.slice(1, 2)}`
-
-    } else {
-        return `0${charID}`
-    }*/
-
-    
 }
 function fillCardBack(pokeBack, data) {
-let pokeOrder = document.createElement('p')
-let pokeHP = document.createElement('h5')
+let backName = document.createElement('h3')
+backName.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
+let powers = document.createElement('p')
+powers.textContent = data.abilities
 
-pokeOrder.textContent = `#${data.order} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
-//pokeHP.textContent = data.stats[0].base_stat
+
+
+
 pokeBack.setAttribute('class', 'card__face card__face--back')
 
-pokeBack.appendChild(pokeOrder)
-pokeBack.appendChild(pokeHP)
+pokeBack.appendChild(backName)
+pokeBack.appendChild(powers)
+
 }
 
 
@@ -123,7 +118,7 @@ function fillCardFront(pokeFront, data) {
         let badImage = event.target
         badImage.src = "../Images/earth.png"
     })
-    pokeName.textContent = `${data.name} height: ${data.height}`
+        pokeName.textContent = `${data.name.toUpperCase()}`
 
     pokeFront.appendChild(pokePic)
     pokeFront.appendChild(pokeName)

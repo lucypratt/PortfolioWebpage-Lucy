@@ -7,44 +7,45 @@
 body {
    display: flex;
    flex-direction: column;
+
 }
 main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
     width: 100%;
     max-width: 1280px;
     margin-bottom: 6rem;
 }
 
- h1, h3 {
-    font-family: 'Fascinate Inline', cursive;
+ h1 {
+font-family: 'Open Sans Condensed', cursive;
 font-size: 1rem;
 margin: 0px;
+}
+h3 {
+  font-family: 'Josefin Slab', cursive;
+  margin: 5px;
 }
  
 
 
 /* Card Styling */
  .charDivs {
-    border: 3px solid #736B6A;
-    border-radius: 1rem;
-    margin: 10px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-   
-
-    background-color: #F2F1E9;
+    
 } 
 .picDivs {
-    width: 100%;
+    width: 90%;
+    padding: 10px;
 
 }
 .scene {
   width: 200px;
   height: 260px;
-  border: 1px solid #CCC;
   margin: 40px 0;
   perspective: 600px;
 }
@@ -59,15 +60,14 @@ margin: 0px;
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) scale(1.1);
 }
 
 .card__face {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* line-height: 260px; */
-  color: brown;
+  color: #003366;
   text-align: center;
   font-weight: bold;
   font-size: 1rem;
@@ -75,12 +75,33 @@ margin: 0px;
 }
 
 .card__face--front {
-  /* background: red; */
+  border: 3px solid #c0c0c0;
+  border-radius: 1rem;
+  margin: 10px;
+  background-color: #F2F1E9;
+}
+.card__face--front:hover {
+  transition-duration: 1.2s;
+ transform: scale(1.1)
 }
 
 .card__face--back {
-  /* background: blue; */
+  border: 3px solid #c0c0c0;
+    border-radius: 1rem;
+    margin: 10px;
+    background-color: #F2F1E9;
   transform: rotateY(180deg);
 }
   
 
+/*Button*/
+#new {
+  font-family: 'Open Sans Condensed', cursive;
+font-size: 1rem;
+height: 4rem;
+width: 200px;
+border: 2px solid #c0c0c0;
+color:#c0c0c0;
+background-color: #003366;
+border-radius: 1rem;
+}
