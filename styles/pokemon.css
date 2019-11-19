@@ -31,6 +31,7 @@ main {
 }
 h1 {
   font-family: 'Josefin Slab', cursive;
+  padding-left: 10px;
 }
 
  h2 {
@@ -115,7 +116,7 @@ text-transform: capitalize;
   
 
 /*Button*/
-#new {
+#new, #custom {
   font-family: 'Open Sans Condensed', cursive;
 font-size: 1rem;
 height: 4rem;
@@ -125,5 +126,6 @@ color:#c0c0c0;
 background-color: #003366;
 border-radius: 1rem;
 margin-left: 10px;
-margin-top: 5px;
+margin-top: 10px;
+margin: 5px 10px 0px 10px;
 }

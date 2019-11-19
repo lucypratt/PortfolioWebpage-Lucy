@@ -4,29 +4,46 @@
     const myJson = await response.json();
 };
 */
-//Like a cookie cutter to make more stuff
+//Constructor
 class Pokemon {
     constructor(id, name, abilities, types) {
-      this.id = id;
+      this.id = 900;
       this.name = name;
-      this.abilities = abilities;
-      this.types = types;
+      
+      /*this.abilities = abilities;
+      this.types = types;*/
       
     }
   }
-  let abilities =[]
+  //let abilities =[]
   const lilguy = new Pokemon(
       900,
     'Your Pokemon',
-    abilities = [{ ability: { name: 'everything' } }]
-    [{ types: { name: 'water'} }]
+   // abilities = [{ ability: { name: 'everything' } }]
+   // [{ types: { name: 'water'} }]
     )
   
+//BUTTONS
+//Pull in new pokemon button
   const newButton = document.querySelector('#new')
   newButton.addEventListener('click', function() {
-    populateDOM(lilguy)
+    let pokemonId = prompt("Enter Pokemon ID");
+    
+    if (pokemonId > 0 && pokemonId <= 807) {
+getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then(result => {populateDOM(result)})
+    }
+    else {
+        alert('That is not a valid')//TODO Find a framework that alert
+    }
   })
  
+  //Custom Card button
+  const customButton = document.querySelector('#custom')
+  customButton.addEventListener('click', function() {
+
+    populateDOM(lilguy)
+  })
+
 
 // This is how to pull data from an API - This just returns data from the url it's given
 async function getAPIData(url) {
@@ -42,7 +59,6 @@ async function getAPIData(url) {
 
 let allData = []
 let simpleData = []
-
 //Now, use the returned async data
 const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 .then(data => {
@@ -83,7 +99,6 @@ let mainArea = document.querySelector('main')
 
 function populateDOM(single_pokemon) {
     
-//Variables
 let pokeScene = document.createElement('div')
 let pokeCard = document.createElement('div')
 let pokeFront = document.createElement('div')
@@ -91,17 +106,15 @@ let pokeBack = document.createElement('div')
 
 fillCardBack(pokeBack, single_pokemon)
 fillCardFront(pokeFront, single_pokemon)
+ 
+pokeScene.setAttribute('class', 'scene')
+pokeCard.setAttribute('class', 'card')
 
-//Assigning Value
 //Click Function
 pokeCard.addEventListener( 'click', function() {
     pokeCard.classList.toggle('is-flipped'); //Adds "is flipped" to end of class name I believe.
   });
- //Set Attributes
-pokeScene.setAttribute('class', 'scene')
-pokeCard.setAttribute('class', 'card')
 
-//Appending
 pokeCard.appendChild(pokeFront)
 pokeCard.appendChild(pokeBack)
 pokeScene.appendChild(pokeCard)
@@ -109,35 +122,24 @@ mainArea.appendChild(pokeScene)
 }
 
 
-//Array Character Function
-function getPokeNumber(id) {
-
-    if(id < 10) return `00${id}`
-    if(id > 9 && id < 100) {
-        return `0${id}`
-    } else return id
-}
+//Back of Card Configuration
 function fillCardBack(pokeBack, data) {
 let backName = document.createElement('h3')
 backName.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
 
-let power1 = document.createElement('p')
+/*let power1 = document.createElement('p')
 power1.textContent = `Main Ability: ${data.abilities[0].ability.name}`
-/*let power2 = document.createElement('p')
+let power2 = document.createElement('p')
 power2.textContent = `Secondary Ability: ${data.abilities[1].ability.name}`*/
-
-
 
 pokeBack.setAttribute('class', 'card__face card__face--back')
 
 pokeBack.appendChild(backName)
-pokeBack.appendChild(power1)
+//pokeBack.appendChild(power1)
 //pokeBack.appendChild(power2)
-
-
 }
 
-
+//Front of Card Configuration
 function fillCardFront(pokeFront, data) {
     let pokeName = document.createElement('h2')
     let pokePic = document.createElement('img')
@@ -147,13 +149,22 @@ function fillCardFront(pokeFront, data) {
 
     pokeFront.setAttribute('class', 'charDivs card__face card__face--front')
 
-    pokePic.src = `../Images/${pokeNum}.png`
+    pokePic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
     pokePic.addEventListener('error', (event) => {
         let badImage = event.target
-        badImage.src = "../Images/earth.png"
+        badImage.src = "../Images/900.png"
     })
         pokeName.textContent = `${data.name.toUpperCase()}`
 
     pokeFront.appendChild(pokePic)
     pokeFront.appendChild(pokeName)
     }
+
+ //Array Character Function
+function getPokeNumber(id) {
+
+    if(id < 10) return `00${id}`
+    if(id > 9 && id < 100) {
+        return `0${id}`
+    } else return id
+}
