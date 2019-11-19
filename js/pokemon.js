@@ -6,15 +6,22 @@
 */
 //Like a cookie cutter to make more stuff
 class Pokemon {
-    constructor(id, name) {
+    constructor(id, name, abilities, types) {
       this.id = id;
       this.name = name;
-      this.power1 = 'none';
+      this.abilities = abilities;
+      this.types = types;
       
     }
   }
+  let abilities =[]
+  const lilguy = new Pokemon(
+      900,
+    'Your Pokemon',
+    abilities = [{ ability: { name: 'everything' } }]
+    [{ types: { name: 'water'} }]
+    )
   
-  const lilguy = new Pokemon(900, 'Your Pokemon');
   const newButton = document.querySelector('#new')
   newButton.addEventListener('click', function() {
     populateDOM(lilguy)
@@ -37,14 +44,14 @@ let allData = []
 let simpleData = []
 
 //Now, use the returned async data
-const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/')
+const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 .then(data => {
     
     for (const pokemon of data.results) {
         getAPIData(pokemon.url) //Returns promise
         .then(pokedata => {
             allData = (data.results)
-    simpleData = makeMap(allData)
+    //simpleData = makeMap(allData)
             populateDOM(pokedata) //Comment this out if you keep making changes and hitting the API
         })
         
@@ -53,20 +60,20 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/')
 
 
 //Map the data
-function makeMap(everyone) {
+/*function makeMap(everyone) {
     let results = everyone.map(data => {
         return {
             id: data.id,
             name: data.name,
-           power1: data.abilities,
-            type: data.types
+           ability: data.abilities,
+            types: data.types
         }
     })
     return results
 }
     
-/*Filter the Data - Do something with this
-const poison = data.filter(pokemon => pokemon.type === 'poison')
+Filter the Data - Do something with this
+const poison = data.filter(pokemon => pokemon.types === 'poison')
 console.log(poison)
 */
 
