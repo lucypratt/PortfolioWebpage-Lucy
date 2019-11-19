@@ -51,17 +51,24 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/')
       }
 })
 
+
 //Map the data
 function makeMap(everyone) {
     let results = everyone.map(data => {
         return {
             id: data.id,
-            name: data.name
+            name: data.name,
+           power1: data.abilities,
+            type: data.types
         }
     })
     return results
 }
     
+/*Filter the Data - Do something with this
+const poison = data.filter(pokemon => pokemon.type === 'poison')
+console.log(poison)
+*/
 
 
 //Setting up the DOM
@@ -107,9 +114,9 @@ function fillCardBack(pokeBack, data) {
 let backName = document.createElement('h3')
 backName.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
 
-/*let power1 = document.createElement('p')
+let power1 = document.createElement('p')
 power1.textContent = `Main Ability: ${data.abilities[0].ability.name}`
-let power2 = document.createElement('p')
+/*let power2 = document.createElement('p')
 power2.textContent = `Secondary Ability: ${data.abilities[1].ability.name}`*/
 
 
@@ -117,7 +124,7 @@ power2.textContent = `Secondary Ability: ${data.abilities[1].ability.name}`*/
 pokeBack.setAttribute('class', 'card__face card__face--back')
 
 pokeBack.appendChild(backName)
-//pokeBack.appendChild(power1)
+pokeBack.appendChild(power1)
 //pokeBack.appendChild(power2)
 
 
