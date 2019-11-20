@@ -10,8 +10,8 @@ class Pokemon {
       this.id = 900;
       this.name = name;
       
-      /*this.abilities = abilities;
-      this.types = types;*/
+      this.abilities = abilities;
+     this.types = types;
       
     }
   }
@@ -19,8 +19,8 @@ class Pokemon {
   const lilguy = new Pokemon(
       900,
     'Your Pokemon',
-   // abilities = [{ ability: { name: 'everything' } }]
-   // [{ types: { name: 'water'} }]
+    [{ ability: { name: 'everything' } }],
+   [{ type: { name: 'water'} }]
     )
   
 //BUTTONS
@@ -33,7 +33,7 @@ class Pokemon {
 getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then(result => {populateDOM(result)})
     }
     else {
-        alert('That is not a valid')//TODO Find a framework that alert
+        alert('That is not a valid ID')//TODO Find a framework that alert
     }
   })
  
@@ -58,7 +58,8 @@ async function getAPIData(url) {
 }
 
 let allData = []
-let simpleData = []
+let poisonPokemon = []
+//let simpleData = []
 //Now, use the returned async data
 const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 .then(data => {
@@ -68,7 +69,10 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
         .then(pokedata => {
             allData = (data.results)
     //simpleData = makeMap(allData)
+   
             populateDOM(pokedata) //Comment this out if you keep making changes and hitting the API
+             poisonPokemon = makeFilter(allData, 'poison')
+            console.log(poisonPokemon)
         })
         
       }
@@ -87,11 +91,23 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
     })
     return results
 }
-    
-Filter the Data - Do something with this
-const poison = data.filter(pokemon => pokemon.types === 'poison')
-console.log(poison)
-*/
+  */  
+//Filter the Data - Do something with this
+function makeFilter(list, poisonType) {
+    return list.filter(pokemon => pokemon.types === poisonType)
+}
+// This creates a new array that you can then display. Maybe use a button to do it
+
+//Reduce Function
+/*function heaviestPokemon(pokemonList) {
+    return pokemonList.reduce((weight, pokemon) => {
+        return (weight.weight || 0) > pokemon.age ? weight : pokemon
+    }, 0)
+    const testArray = [5,10,15,20,25,30,35,40,45,50,30]
+const testReduce = testArray.reduce((acc, num) => {
+    return acc + num
+}, 0)
+}*/
 
 
 //Setting up the DOM
@@ -127,16 +143,18 @@ function fillCardBack(pokeBack, data) {
 let backName = document.createElement('h3')
 backName.textContent = `${data.name[0].toUpperCase()}${data.name.slice(1)}`
 
-/*let power1 = document.createElement('p')
+let power1 = document.createElement('p')
 power1.textContent = `Main Ability: ${data.abilities[0].ability.name}`
-let power2 = document.createElement('p')
-power2.textContent = `Secondary Ability: ${data.abilities[1].ability.name}`*/
+ let type1 = document.createElement('p')
+type1.textContent = `Type: ${data.types[0].type.name}`
+
+
 
 pokeBack.setAttribute('class', 'card__face card__face--back')
 
 pokeBack.appendChild(backName)
-//pokeBack.appendChild(power1)
-//pokeBack.appendChild(power2)
+pokeBack.appendChild(power1)
+pokeBack.appendChild(type1)
 }
 
 //Front of Card Configuration
