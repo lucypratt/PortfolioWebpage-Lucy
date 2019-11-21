@@ -116,7 +116,7 @@ text-transform: capitalize;
   
 
 /*Button*/
-#new, #custom {
+#new, #custom, #filter {
   font-family: 'Open Sans Condensed', cursive;
 font-size: 1rem;
 height: 4rem;

@@ -1,0 +1,18 @@
+//Reduce Function
+/*function heaviestPokemon(pokemonList) {
+    return pokemonList.reduce((weight, pokemon) => {
+        return (weight.weight || 0) > pokemon.age ? weight : pokemon
+    }, 0)
+    const testArray = [5,10,15,20,25,30,35,40,45,50,30]
+const testReduce = testArray.reduce((acc, num) => {
+    return acc + num
+}, 0)
+}*/
+
+
+
+/*async function getPokemonData(url) {
+    const response = await fetch('url');
+    const myJson = await response.json();
+};
+*/
