@@ -16,3 +16,17 @@ const testReduce = testArray.reduce((acc, num) => {
     const myJson = await response.json();
 };
 */
+
+
+Require in getAPI Function: const poison = await getPoison(data.id)
+        data.poison = Poison
+async function getPoison(pokemonID) {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+    .then (pokemon => {
+        const poison = pokemon.types.find(element => {
+            return element.type.name === 'poison'
+        
+        })
+        return poison.name
+    })
+  }

@@ -44,8 +44,7 @@ async function getAPIData(url) {
     try {
         const response = await fetch(url)
         const data = await response.json()
-        return data;
-    }
+        return data    }
     catch (error) {
         console.error(error)
     }
@@ -65,7 +64,8 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
                     //simpleData = makeMap(allData)
 
                     populateDOM(pokedata) //Comment this out if you keep making changes and hitting the API
-                    poisonPokemon = makeFilter(allData, 'poison')
+                    poisonPokemon = makeFilter(allData, "poison")
+                    console.log(poisonPokemon)
                 })
 
         }
@@ -73,7 +73,7 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 
 
 //Map the data
-/*function makeMap(everyone) {
+function makeMap(everyone) {
     let results = everyone.map(data => {
         return {
             id: data.id,
@@ -84,7 +84,9 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
     })
     return results
 }
-  */
+  
+
+ 
 //Filter the Data - // This creates a new array that you can then display. Maybe use a button to do it
 function makeFilter(list, poisonType) {
     return list.filter(pokemon => pokemon.types[0].type.name === poisonType)
