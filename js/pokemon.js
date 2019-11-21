@@ -106,12 +106,15 @@ function populateDOM(single_pokemon) {
     let pokeCard = document.createElement('div')
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
+    let heading = document.querySelector('#heading')
+    heading.setAttribute('class', 'animated slideInDown')
 
     fillCardBack(pokeBack, single_pokemon)
     fillCardFront(pokeFront, single_pokemon)
 
     pokeScene.setAttribute('class', 'scene')
     pokeCard.setAttribute('class', 'card')
+    
 
     //Click Function
     pokeCard.addEventListener('click', function () {
@@ -148,7 +151,9 @@ function fillCardBack(pokeBack, data) {
 function fillCardFront(pokeFront, data) {
     let pokeName = document.createElement('h2')
     let pokePic = document.createElement('img')
-    pokePic.setAttribute('class', 'picDivs')
+    pokePic.setAttribute('id', 'picDivs')
+    pokePic.setAttribute('class', 'animated zoomIn')
+
 
     let pokeNum = getPokeNumber(data.id)
 

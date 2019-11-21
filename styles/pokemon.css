@@ -59,7 +59,7 @@ text-transform: capitalize;
     align-items: center;
     
 } 
-.picDivs {
+#picDivs {
     width: 90%;
     padding: 10px;
 
