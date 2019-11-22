@@ -115,7 +115,10 @@ poisonPokemon.setAttribute('style', 'background-color: green')
     let pokeCard = document.createElement('div')
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
+    let heading = document.querySelector('#heading')
+    heading.setAttribute('class', 'animated slideInDown')
   
+
     fillCardBack(pokeBack, single_pokemon)
     fillCardFront(pokeFront, single_pokemon)
   
