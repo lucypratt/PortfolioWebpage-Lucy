@@ -75,7 +75,6 @@ class Pokemon {
     },
   )
   
-  console.log(poisonPokemon)
   
   //Map the data
   function makeMap(everyone) {
@@ -98,14 +97,15 @@ class Pokemon {
     if (foundMatch.length !== 0) {
       return true
     }
+    const filterButton = document.querySelector('#filter')
+    filterButton.addEventListener('click', function() {
+        populateDOM(poisonPokemon)
+    })
+    
   }
   
   // This creates a new array that you can then display. Maybe use a button to do it
-  const filterButton = document.querySelector('#filter')
-customButton.addEventListener('click', function () {
-    populateDOM(poisonPokemon)
-poisonPokemon.setAttribute('style', 'background-color: green')
-})
+ 
   
   //Setting up the DOM
   let mainArea = document.querySelector('main')
