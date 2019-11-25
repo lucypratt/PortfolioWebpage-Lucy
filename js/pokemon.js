@@ -96,8 +96,6 @@ class Pokemon {
     populateDOM(poisonPokemon[i])
     }
   })
-
-
   // This creates a new array that you can then display. Maybe use a button to do it
   //Filter the Data - Do something with this
   function makeFilter(pokedata, pokeType) {
@@ -106,7 +104,6 @@ class Pokemon {
     if (foundMatch.length !== 0) {
       return true
     }
-    
    }
   
  

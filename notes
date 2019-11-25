@@ -1,6 +1,6 @@
 //Reduce Function
-/*function heaviestPokemon(pokemonList) {
-    return pokemonList.reduce((weight, pokemon) => {
+/*function pokeWeight(single_pokemon) {
+    return single_pokemon.reduce((weight, pokemon) => {
         return (weight.weight || 0) > pokemon.age ? weight : pokemon
     }, 0)
     const testArray = [5,10,15,20,25,30,35,40,45,50,30]
