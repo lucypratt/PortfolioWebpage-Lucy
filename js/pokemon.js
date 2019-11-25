@@ -13,7 +13,6 @@ class Pokemon {
       this.types = types
     }
   }
-  //let abilities =[]
   const lilguy = new Pokemon(
     900,
     'Your Pokemon',
@@ -55,9 +54,11 @@ class Pokemon {
     }
   }
   
+  
+
   let allData = []
   let poisonPokemon = []
-  //let simpleData = []
+  let simpleData = []
   //Now, use the returned async data
   const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25').then(
     data => {
@@ -65,7 +66,7 @@ class Pokemon {
         getAPIData(pokemon.url) //Returns promise
           .then(pokedata => {
             allData = data.results
-            //simpleData = makeMap(allData)
+            simpleData = makeMap(allData)
             populateDOM(pokedata) //Comment this out if you keep making changes and hitting the API
             if (makeFilter(pokedata, 'poison')) {
               poisonPokemon.push(pokedata)
@@ -74,7 +75,6 @@ class Pokemon {
       }
     },
   )
-  
   
   //Map the data
   function makeMap(everyone) {
@@ -88,8 +88,17 @@ class Pokemon {
       })
       return results
   }
-    
   
+  
+  const filterButton = document.querySelector('#filter')
+  filterButton.addEventListener('click', function() {
+    for (let i = 0; i < 8; i++) {
+    populateDOM(poisonPokemon[i])
+    }
+  })
+
+
+  // This creates a new array that you can then display. Maybe use a button to do it
   //Filter the Data - Do something with this
   function makeFilter(pokedata, pokeType) {
     let foundMatch = pokedata.types.filter(
@@ -97,14 +106,9 @@ class Pokemon {
     if (foundMatch.length !== 0) {
       return true
     }
-    const filterButton = document.querySelector('#filter')
-    filterButton.addEventListener('click', function() {
-        populateDOM(poisonPokemon)
-    })
     
-  }
+   }
   
-  // This creates a new array that you can then display. Maybe use a button to do it
  
   
   //Setting up the DOM
