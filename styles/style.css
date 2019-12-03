@@ -55,7 +55,7 @@ li {
     display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--black);
+  background-image: url("/Images/city.jpg");
   text-align: center;    
 }
 #welcome-section h1 {
@@ -66,26 +66,39 @@ li {
 }
 
 #about {
+  background-color: var(--light-black);
   align-items: left;
-  margin-left: 2rem;
+  padding-left: 10%;
+  color: white;
 }
 #info {
   display: flex;
+  margin-top: 20px;
+  width: 80%;
 
 }
 #about h2 {
   font-size: 3rem;
   padding: 7px;
-  width: 110px;
+  width: 250px;
   border-bottom: 1px solid #A6904E;
 }
 #about p {
 padding-top: 10px;
 }
+#aboutImage {
+  height: 200px;
+  padding: 10px;
+ margin: 0px 20px 20px 0px;
+  border: 2px solid #A6904E;
+}
 
+span {
+  color: var(--gold);
+}
 
 #projects {
-  background-color: var(--light-black);
+  background-color: var(--black);
   padding: 10px;
 }
 #projects figcaption {
@@ -138,7 +151,7 @@ h3 {
   display: flex;
  flex-direction: column;
   align-items: center;
-  background-color: var(--black);
+  background-color: var(--light-black);
   color: var(--white);
 }
 #contact h2 {
@@ -173,7 +186,7 @@ h3 {
 
 footer {
   display: flex;
-  background-color: var(--light-black);
+  background-color: var(--black);
   align-items: center;
   justify-content: flex-end;
   color: var(--white);

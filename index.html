@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Economica&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.1/gsap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,7 +17,7 @@
   <nav id="navbar">
     <ul class="navlist animated slideInRight">
       <li>
-        <a href="#welcome-section">About</a>
+        <a href="#about">About</a>
       </li>
       <li>
         <a href="#projects">Work</a>
@@ -30,36 +31,41 @@
     <h1 class="animated fadeIn">Welcome to My Portfolio!</h1>
   </section>
   <section id="about">
-    <h2>About</h2>
+    <h2>Hi, I'm Lucy</h2>
     <div id="info">
-    <p>My name is Lucy Pratt and I'm currently studying web developement at UVU.</p>
-    <img src="Images/profile.jpg" id="image">
+    <img src="Images/profile.jpg" id="aboutImage">
+    <p>My name is Lucy Pratt and I'm currently studying web developement at UVU. ry-hard taiyaki, beard mumblecore meh chia organic. Jean shorts actually fingerstache, lomo banjo vegan seitan quinoa jianbing cardigan chambray. 90's bitters taiyaki chia master cleanse irony gochujang tumblr umami fashion axe subway tile +1. Coloring book bespoke hella bicycle rights church-key.</p>
+    
   </div>
   </section>
   <section id="projects">
     <h2 id="project">My Projects</h2>
     <div class="projects-grid">
-      <figure class="animated zoomIn"><a id="profile-link" class="project-tile" target="_blank" href="http://sandbox.sixstringsmusic.com/">
-          <img id="image" src="/images/sslogo.png" /></a>
-        <figcaption>Six Strings Music</figcaption>
-      </figure>
       <figure><a id="profile-link" class="project-tile" target="_blank"
           href="https://affectionate-heisenberg-1280b7.netlify.com/">
           <img id="image" src="images/VSCpng2.png" /></a>
-        <figcaption>Personal Portfolio</figcaption>
+        <figcaption><span>HTML/CSS</span> Personal Portfolio</figcaption>
       </figure>
       <figure><a id="profile-link" class="project-tile" target="_blank" href="/starwars.html">
           <img id="image" src="images/starlogo.png" /></a>
-        <figcaption>Star Wars API Project</figcaption>
+        <figcaption><span>JavaScript</span> Star Wars API Project</figcaption>
       </figure>
       <figure><a id="profile-link" class="project-tile" target="_blank" href="/pokemon.html">
           <img id="image" src="Images/pokelogo.png" /></a>
-        <figcaption>Trading Cards Project</figcaption>
+        <figcaption><span>JavaScript</span> Trading Cards Project</figcaption>
       </figure>
+      <figure><a id="profile-link" class="project-tile" target="_blank" href="/senators/index.html">
+        <img id="image" src="Images/flag.png" /></a>
+      <figcaption><span>JavaScript</span> Senators Project</figcaption>
+    </figure>
       <figure><a id="profile-link" class="project-tile" target="_blank" href="http://fun4less.sixstringsmusic.com/">
         <img id="image" src="Images/funlogo.png" /></a>
-      <figcaption>Fun4Less</figcaption>
+      <figcaption><span>HTML/CSS</span> Fun4Less</figcaption>
     </figure>
+    <figure><a id="profile-link" class="project-tile" target="_blank" href="http://sandbox.sixstringsmusic.com/">
+      <img id="image" src="/images/sslogo.png" /></a>
+    <figcaption><span>HTML/CSS</span> Six Strings Music</figcaption>
+  </figure>
 
   </section>
   <section id="contact">
