@@ -6,7 +6,7 @@
 
 ### Rubric Links
 * Basic JavaScript
-    * [Variables with proper scope]()
+    * [Variables with proper scope](https://github.com/lucypratt/PortfolioWebpage-Lucy/blob/master/js/pokemon.js)
     * [Good use of arrays]()
     * [JavaScript objects]()
 
