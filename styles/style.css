@@ -35,8 +35,6 @@ animation-delay: 1s;
 a {
 color: white;
   text-decoration: none;
-
-  
 }
 .navlist a:hover {
 color:#8C713F;
@@ -77,6 +75,10 @@ li {
   width: 80%;
 
 }
+#info a {
+  color: var(--gold);
+    text-decoration: none;
+  }
 #about h2 {
   font-size: 3rem;
   padding: 7px;
