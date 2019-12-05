@@ -55,7 +55,7 @@ class Pokemon {
   }
   
   
-
+//Variables with proper scope
   let allData = []
   let poisonPokemon = []
   let simpleData = []
@@ -76,7 +76,7 @@ class Pokemon {
     },
   )
   
-  //Map the data
+  //Map the data & Return object
   function makeMap(everyone) {
       let results = everyone.map(data => {
           return {

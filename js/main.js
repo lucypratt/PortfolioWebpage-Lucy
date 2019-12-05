@@ -11,12 +11,13 @@ async function getAPIData(url) {
 
 
 
-//Using the async data
+//Using Arrays
 let allSenators = []
 let simpleSenators = []
 let republicans = []
 let democrats = []
 
+//Using the async data
 const theData = getAPIData('senators.json').then(data => {
     allSenators = (data.results[0].members)
     simpleSenators = makeSimpleMap(allSenators)
