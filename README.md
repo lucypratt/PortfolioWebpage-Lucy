@@ -1,8 +1,8 @@
 # PortfolioWebpage-Lucy
 
 ## Project Links
-*[Netlify Link](https://pensive-yonath-20a854.netlify.com)
-*[Github](https://github.com/lucypratt/PortfolioWebpage-Lucy)
+* [Netlify Link](https://pensive-yonath-20a854.netlify.com)
+* [Github](https://github.com/lucypratt/PortfolioWebpage-Lucy)
 
 ### Rubric Links
 * [HTML](https://github.com/lucypratt/PortfolioWebpage-Lucy/blob/master/index.html)

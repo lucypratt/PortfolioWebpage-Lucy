@@ -79,6 +79,10 @@ li {
   color: var(--gold);
     text-decoration: none;
   }
+  #info a:hover {
+    color: var(--black);
+      text-decoration: none;
+    }
 #about h2 {
   font-size: 3rem;
   padding: 7px;
