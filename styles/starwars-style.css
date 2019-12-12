@@ -1,7 +1,10 @@
 * {
     margin: 0px;
     text-transform: capitalize;
-    
+
+}
+html {
+    width: 100%;
 }
 
 body {

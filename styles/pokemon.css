@@ -79,7 +79,8 @@ text-transform: capitalize;
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg) scale(1.1);
+  transform: rotateY(180deg) scale(1.1);  
+ 
 }
 
 .card__face {
@@ -101,7 +102,8 @@ text-transform: capitalize;
 }
 .card__face--front:hover {
   transition-duration: 1.2s;
- transform: scale(1.1)
+ transform: scale(1.1);
+ 
 }
 
 .card__face--back {
@@ -110,6 +112,7 @@ text-transform: capitalize;
     margin: 10px;
     background-color: #F2F1E9;
   transform: rotateY(180deg);
+ 
 }
 
   
